@@ -18,6 +18,15 @@ npm i http express mongoose
 
 npm i mongoose@6.3.2
 
+Install dev dependency Nodemon
+npm i nodemon --save-dev
+
+change script in package.json
+"dev": "nodemon ./index.js"
+
+Start the Server
+npm run dev
+
 ```
 ### Important documents
 ----
