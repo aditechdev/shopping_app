@@ -7,18 +7,20 @@ const PORT = 3000; //localHost
 // Creating an API
 // https://<your Ip Adress>/hello-world
 // Get Put Post Delete Update  => Crude
-app.get("/hello-world", (req, res) => { 
-    // res.send("hello world");
-    res.json({ "hi": "Hellow Meaow" });
+// !Example of API
+// ! Example 1
+// app.get("/hello-world", (req, res) => { 
+//     // res.send("hello world");
+//     res.json({ "hi": "Hellow Meaow" });
 
-}); 
+// }); 
+// !Example 2
+// app.get("/", (req, res) => { 
 
-app.get("/", (req, res) => { 
-
-    res.json({
-        "name": "Aditya"
-    });
-})
+//     res.json({
+//         "name": "Aditya"
+//     });
+// })
 
 app.listen(PORT,  () => { 
     console.log("Connect at PORT: " +PORT);
