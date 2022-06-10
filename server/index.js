@@ -1,26 +1,16 @@
-// Import Express
+//! Import From Package
 const express = require('express');
-// Initialize the API
+//! Import from File
+const authRouter = require('./routes/auth');
+
+// Init
 const app = express();
 const PORT = 3000; //localHost
 
-// Creating an API
-// https://<your Ip Adress>/hello-world
-// Get Put Post Delete Update  => Crude
-// !Example of API
-// ! Example 1
-// app.get("/hello-world", (req, res) => { 
-//     // res.send("hello world");
-//     res.json({ "hi": "Hellow Meaow" });
 
-// }); 
-// !Example 2
-// app.get("/", (req, res) => { 
-
-//     res.json({
-//         "name": "Aditya"
-//     });
-// })
+//! MiddleWare
+//! Client -> Server -> Clinet
+app.use(authRouter);
 
 app.listen(PORT,  () => { 
     console.log("Connect at PORT: " +PORT);
