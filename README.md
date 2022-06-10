@@ -8,7 +8,9 @@ A new Flutter project.
 <img src="https://img.shields.io/static/v1?label=Dart&message=2.16.2&color=#0553B1"> 
 <img src="https://img.shields.io/static/v1?label=Channel&message=Stable&color=#0553B1"> 
 
-
+### Important documents
+----
+[Update Node](https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/)
 ### Helpful resources for flutter
 ---
 
