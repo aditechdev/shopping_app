@@ -2,12 +2,14 @@ const express = require("express");
 
 const authRouter = express.Router();
 // API
-authRouter.get("/user", (req, res) => { 
+authRouter.post("/api/signup", (req, res) => { 
 
-    res.json({
+    // Get Data 
+    const {name, email, password} = req.body;
 
-        "msg": "Aditya "
-    });
+    // Post Data in database
+
+    // Return that Data to client
 })
 // Exports the Route
 module.exports = authRouter;
