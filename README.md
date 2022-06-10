@@ -2,7 +2,8 @@
 
 A new Flutter project.
 
-## Getting Started
+### Helpful resources for flutter
+---
 
 This project is a starting point for a Flutter application.
 
