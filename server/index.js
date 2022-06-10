@@ -5,7 +5,22 @@ const app = express();
 const PORT = 3000; //localHost
 
 // Creating an API
-app.listen(PORT, "0.0.0.0", () => { 
+// https://<your Ip Adress>/hello-world
+// Get Put Post Delete Update  => Crude
+app.get("/hello-world", (req, res) => { 
+    // res.send("hello world");
+    res.json({ "hi": "Hellow Meaow" });
+
+}); 
+
+app.get("/", (req, res) => { 
+
+    res.json({
+        "name": "Aditya"
+    });
+})
+
+app.listen(PORT,  () => { 
     console.log("Connect at PORT: " +PORT);
     console.log(`Connect at PORT: ${PORT}`);
 } ); // If you dont put any number, It will access local host,
