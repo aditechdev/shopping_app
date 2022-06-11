@@ -45,7 +45,7 @@ class _AuthScreenState extends State<AuthScreen> {
       backgroundColor: GlobalVariable.greyBackgroundColor,
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, top: 20),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
@@ -57,6 +57,9 @@ class _AuthScreenState extends State<AuthScreen> {
                   fontSize: 22,
                   fontWeight: FontWeight.w500,
                 ),
+              ),
+              const SizedBox(
+                height: 5,
               ),
               ListTile(
                 tileColor: (_auth == Auth.register)
