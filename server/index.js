@@ -20,12 +20,13 @@ app.use(authRouter);
 // ! Connect database =>
 
 mongoose.connect(DB).then(() => { 
-    console.log("Connection Successful")
+    console.log("Connection Successful 🎉")
 }).catch(e => { 
     console.log(e);
 });
 
-app.listen(PORT,  "0.0.0.0",() => { 
+app.listen(PORT, "0.0.0.0", () => { 
+
     console.log("Connect at PORT: " +PORT);
     console.log(`Connect at PORT: ${PORT}`);
 } ); // If you dont put any number, It will access local host,

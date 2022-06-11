@@ -19,7 +19,7 @@ authRouter.post("/api/signup", async (req, res) => {
         });
         
     }
-      const hashedPassword =   await  bcryptjs.hash(password, 8);
+    const hashedPassword =   await  bcryptjs.hash(password, 8);
 
     let user = new User({
         email,
@@ -30,7 +30,7 @@ authRouter.post("/api/signup", async (req, res) => {
     // save the data 
     user = await user.save();
     // Return that Data to client
-    res.json(user)
+        res.json(user);
         
     } catch (error) {
         res.status(500).json({

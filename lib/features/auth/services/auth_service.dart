@@ -18,14 +18,14 @@ class AuthService {
         Uri.parse("$myIPAddress/api/signup"),
         body: user.toJson(),
         headers: <String, String>{
-          'content-type': 'application/json; charset=UTF-8',
+          'Content-Type': 'application/json; charset=UTF-8',
         },
       );
       httpErrorHandle(
           context: context,
           onSuccess: () {
             showSnakBar(context,
-                "Account created Succesfully 🎉 Login with the same credentials!");
+                "Account created successfulle 🎉 Login with the same credentials!");
           },
           response: response);
     } catch (e) {
