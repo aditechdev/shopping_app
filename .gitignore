@@ -46,3 +46,4 @@ app.*.map.json
 /android/app/release
 server/key/const.js
 server/.env
+server/node_modules
