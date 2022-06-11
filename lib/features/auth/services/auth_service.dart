@@ -68,8 +68,8 @@ class AuthService {
       httpErrorHandle(
           context: context,
           onSuccess: () async {
-            print(response.body);
-            try {
+           
+          
               // Getting Instance
               SharedPreferences pref = await SharedPreferences.getInstance();
               
@@ -84,13 +84,10 @@ class AuthService {
               // Navigate
               Navigator.pushNamedAndRemoveUntil(
                   context, HomeScreen.routeName, (route) => false);
-            } catch (e) {
-              print(e);
-            }
+            
           },
           response: response);
     } catch (e) {
-      print(e);
       showSnakBar(context, e.toString());
     }
   }
