@@ -31,6 +31,7 @@ npm run dev
 ### Important documents
 ----
 [Update Node](https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/)
+[API Status COde](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 ### Helpful resources for flutter
 ---
 
