@@ -14,6 +14,7 @@ const PORT = 3000; //localHost
 
 //! MiddleWare
 //! Client -> Server -> Clinet
+app.use(express.json());
 app.use(authRouter);
 
 // ! Connect database =>
