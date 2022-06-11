@@ -23,7 +23,7 @@ class CustomFormTextField extends StatelessWidget {
         if (value == null || value.isEmpty) {
           return 'Enter your $label';
         }
-        // return null;
+        return null;
       },
     );
   }
