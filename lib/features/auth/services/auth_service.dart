@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:shopping_app/constants/env.dart';
 import 'package:shopping_app/constants/error_handling.dart';
@@ -26,6 +28,34 @@ class AuthService {
           onSuccess: () {
             showSnakBar(context,
                 "Account created successfulle 🎉 Login with the same credentials!");
+          },
+          response: response);
+    } catch (e) {
+      showSnakBar(context, e.toString());
+    }
+  }
+
+  // Sign IN User
+  void signInUser({
+    required BuildContext context,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      http.Response response = await http.post(
+        Uri.parse("$myIPAddress/api/signin"),
+        body: jsonEncode({
+          "email": email,
+          "password": password,
+        }),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+      );
+      httpErrorHandle(
+          context: context,
+          onSuccess: () {
+            print(response.body);
           },
           response: response);
     } catch (e) {
