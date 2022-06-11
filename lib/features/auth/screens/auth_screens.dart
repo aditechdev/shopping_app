@@ -147,7 +147,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           CustomButton(buttonText: "Sign-In", onTap: () {})
                         ],
                       ),
-                      key: _signUpGlobalKey,
+                      key: _signInGlobalKey,
                     ),
                   )
                 : Container(),
