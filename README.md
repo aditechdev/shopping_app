@@ -27,6 +27,10 @@ change script in package.json
 Start the Server
 npm run dev
 
+Get IP Address(Mac)
+For Ethernet connections, enter the command => ipconfig getifaddr en1. For Wi-Fi connections, enter the command=> ipconfig getifaddr en0.
+To get your public IP address from the Mac Terminal, enter the command=> curl ifconfig.me.
+
 ```
 ### Important documents
 ----

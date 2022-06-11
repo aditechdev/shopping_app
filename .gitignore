@@ -47,3 +47,4 @@ app.*.map.json
 server/key/const.js
 server/.env
 server/node_modules
+lib/constants/env.dart
