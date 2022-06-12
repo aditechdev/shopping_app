@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/auth/screens/auth_screens.dart';
 import 'package:shopping_app/features/auth/services/auth_service.dart';
+import 'package:shopping_app/features/home/screens/home_screens.dart';
 import 'package:shopping_app/provider/user_provider.dart';
 import 'package:shopping_app/router.dart';
 
@@ -32,12 +33,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    
+    auth.getUserData(context: context);
   }
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print("Token"+ Provider.of<UserProvider>(context).user.token);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shopping App Clone ',
@@ -54,7 +56,9 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: const AuthScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? const HomeScreen()
+          : const AuthScreen(),
     );
   }
 }
