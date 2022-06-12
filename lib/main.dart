@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/auth/screens/auth_screens.dart';
+import 'package:shopping_app/features/auth/services/auth_service.dart';
 import 'package:shopping_app/provider/user_provider.dart';
 import 'package:shopping_app/router.dart';
 
@@ -18,8 +19,21 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  AuthService auth = AuthService();
+
+  @override
+  void initState() {
+    super.initState();
+    
+  }
 
   // This widget is the root of your application.
   @override
