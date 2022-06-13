@@ -97,12 +97,11 @@ class AuthService {
     try {
       SharedPreferences pref = await SharedPreferences.getInstance();
       String? token = pref.getString("x-auth-token");
-      
+
       if (token == null) {
-       
         pref.setString("x-auth-token", '');
       }
-     
+
       var tokenRes = await http.post(
         Uri.parse("$myIPAddress/isTokenValid"),
         headers: <String, String>{
@@ -110,7 +109,6 @@ class AuthService {
           'x-auth-token': token!
         },
       );
-     
 
       var res = jsonDecode(tokenRes.body);
       if (res == true) {
@@ -122,14 +120,12 @@ class AuthService {
             'x-auth-token': token
           },
         );
-       
 
         var userProvider = Provider.of<UserProvider>(context, listen: false);
-        
+
         userProvider.setUser(userRes.body);
       }
     } catch (e) {
-     
       showSnakBar(context, e.toString());
     }
   }

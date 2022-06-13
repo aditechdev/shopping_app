@@ -33,17 +33,13 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-     auth.getUserData(context: context);
+    auth.getUserData(context: context);
   }
- 
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    
-     
-    
-    return MaterialApp (
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Shopping App Clone ',
       theme: ThemeData(
