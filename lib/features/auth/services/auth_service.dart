@@ -97,12 +97,12 @@ class AuthService {
     try {
       SharedPreferences pref = await SharedPreferences.getInstance();
       String? token = pref.getString("x-auth-token");
-       print("token from bloc: $token");
+      
       if (token == null) {
-        print("token from bloc: $token" );
+       
         pref.setString("x-auth-token", '');
       }
-      //! TODO: CHange htt.respose to var
+     
       var tokenRes = await http.post(
         Uri.parse("$myIPAddress/isTokenValid"),
         headers: <String, String>{
@@ -110,7 +110,7 @@ class AuthService {
           'x-auth-token': token!
         },
       );
-      print(tokenRes.body);
+     
 
       var res = jsonDecode(tokenRes.body);
       if (res == true) {
@@ -122,14 +122,14 @@ class AuthService {
             'x-auth-token': token
           },
         );
-        print(userRes.body);
+       
 
         var userProvider = Provider.of<UserProvider>(context, listen: false);
-        print(userProvider.toString());
+        
         userProvider.setUser(userRes.body);
       }
     } catch (e) {
-      print(e);
+     
       showSnakBar(context, e.toString());
     }
   }

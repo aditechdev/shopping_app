@@ -41,7 +41,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     
-      print("Token: "+ Provider.of<UserProvider>(context).user.token.toString());
+     
     
     return MaterialApp (
       debugShowCheckedModeBanner: false,
