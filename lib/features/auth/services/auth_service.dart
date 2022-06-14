@@ -7,7 +7,6 @@ import 'package:shopping_app/common/widget/bottom_bar.dart';
 import 'package:shopping_app/constants/env.dart';
 import 'package:shopping_app/constants/error_handling.dart';
 import 'package:shopping_app/constants/utils.dart';
-import 'package:shopping_app/features/home/screens/home_screens.dart';
 import 'package:shopping_app/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:shopping_app/provider/user_provider.dart';

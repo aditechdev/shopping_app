@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 
@@ -13,6 +14,13 @@ class _BottomBarState extends State<BottomBar> {
   int _pageIndex = 0;
   double bottomBarWidth = 42;
   double bottomBarBorderwidth = 5;
+
+  updatePage(int page) {
+    setState(() {
+      _pageIndex = page;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +30,7 @@ class _BottomBarState extends State<BottomBar> {
         unselectedItemColor: GlobalVariable.unSelectedNavBarColor,
         backgroundColor: GlobalVariable.backgroundColor,
         iconSize: 28,
+        onTap: updatePage,
         items: [
           BottomNavigationBarItem(
             icon: Container(
@@ -32,24 +41,6 @@ class _BottomBarState extends State<BottomBar> {
                     color: (_pageIndex == 0)
                         ? GlobalVariable.selectedNavBarColor
                         : GlobalVariable.backgroundColor,
-
-                    width: bottomBarBorderwidth,
-                  ),
-                ),
-              ),
-              child:const Icon(Icons.home_outlined),
-            ),
-            label: " ",
-          ), 
-          BottomNavigationBarItem(
-            icon: Container(
-              width: bottomBarWidth,
-              decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: (_pageIndex == 0)
-                        ? GlobalVariable.selectedNavBarColor
-                        : GlobalVariable.backgroundColor,
                     width: bottomBarBorderwidth,
                   ),
                 ),
@@ -64,14 +55,14 @@ class _BottomBarState extends State<BottomBar> {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: (_pageIndex == 0)
+                    color: (_pageIndex == 1)
                         ? GlobalVariable.selectedNavBarColor
                         : GlobalVariable.backgroundColor,
                     width: bottomBarBorderwidth,
                   ),
                 ),
               ),
-              child: const Icon(Icons.home_outlined),
+              child: const Icon(Icons.person_outlined),
             ),
             label: " ",
           ),
@@ -81,20 +72,26 @@ class _BottomBarState extends State<BottomBar> {
               decoration: BoxDecoration(
                 border: Border(
                   top: BorderSide(
-                    color: (_pageIndex == 0)
+                    color: (_pageIndex == 2)
                         ? GlobalVariable.selectedNavBarColor
                         : GlobalVariable.backgroundColor,
                     width: bottomBarBorderwidth,
                   ),
                 ),
               ),
-              child: const Icon(Icons.home_outlined),
+              child: Badge(
+                elevation: 0,
+                badgeContent: const Text("2"),
+                badgeColor: Colors.white,
+                child: const Icon(
+                  Icons.shopping_cart_outlined,
+                ),
+              ),
             ),
             label: " ",
-          )
+          ),
         ],
       ),
-      
     );
   }
 }
