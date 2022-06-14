@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shopping_app/common/widget/bottom_bar.dart';
 import 'package:shopping_app/constants/env.dart';
 import 'package:shopping_app/constants/error_handling.dart';
 import 'package:shopping_app/constants/utils.dart';
@@ -82,7 +83,7 @@ class AuthService {
             // Navigate
 
             Navigator.pushNamedAndRemoveUntil(
-                context, HomeScreen.routeName, (route) => false);
+                context, BottomBar.routeName, (route) => false);
           },
           response: response);
     } catch (e) {
