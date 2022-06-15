@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_variable.dart';
+import 'package:shopping_app/features/account/screen/account_screen.dart';
 import 'package:shopping_app/features/home/screens/home_screens.dart';
 
 class BottomBar extends StatefulWidget {
@@ -17,9 +18,7 @@ class _BottomBarState extends State<BottomBar> {
   double bottomBarBorderwidth = 5;
   List<Widget> pages = [
     const HomeScreen(),
-    const Center(
-      child: Text("Account Page"),
-    ),
+    const AccountScreen(),
     const Center(
       child: Text("Cart"),
     )
