@@ -15,6 +15,9 @@ class AccountScreen extends StatelessWidget {
               gradient: GlobalVariable.appBarGradient,
             ),
           ),
+          title: Row(
+            
+          ),
         ),
       ),
     );
