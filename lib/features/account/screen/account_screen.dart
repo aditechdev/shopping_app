@@ -8,15 +8,45 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
           flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: GlobalVariable.appBarGradient,
             ),
           ),
           title: Row(
-            
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                alignment: Alignment.topLeft,
+                //TODO: Brand Logo
+                //TODO: WIdth :120, height , 45. COlors.black,
+                //TODo: CHange Icon to Image.asset
+                child: const Icon(
+                  Icons.abc,
+                  size: 120,
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  right: 15,
+                ),
+                child: Row(
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Icon(Icons.notifications_outlined),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(right: 15),
+                      child: Icon(Icons.search),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),
