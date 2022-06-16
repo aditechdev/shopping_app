@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/account/widget/below_app_bar.dart';
+import 'package:shopping_app/features/account/widget/orders.dart';
+import 'package:shopping_app/features/account/widget/top_buttons.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -52,12 +54,16 @@ class AccountScreen extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: const [
+        children: [
           AppBarBelow(),
           SizedBox(
             height: 10,
           ),
-          
+          TopButtons(),
+          SizedBox(
+            height: 20,
+          ),
+          Orders(),
         ],
       ),
     );
