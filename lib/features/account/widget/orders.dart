@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_variable.dart';
+import 'package:shopping_app/features/account/widget/single_product.dart';
 
 class Orders extends StatefulWidget {
   Orders({Key? key}) : super(key: key);
@@ -9,6 +10,12 @@ class Orders extends StatefulWidget {
 }
 
 class _OrdersState extends State<Orders> {
+  List list = [
+    'https://images.unsplash.com/photo-1644982648791-a010e61aa845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+    'https://images.unsplash.com/photo-1644982648791-a010e61aa845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+    'https://images.unsplash.com/photo-1644982648791-a010e61aa845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+    'https://images.unsplash.com/photo-1644982648791-a010e61aa845?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -39,6 +46,22 @@ class _OrdersState extends State<Orders> {
                 ),
               ),
             ],
+          ),
+          Container(
+            height: 170,
+            padding: const EdgeInsets.only(
+              left: 10,
+              top: 20,
+              right: 0,
+            ),
+            child: ListView.builder(
+              scrollDirection: Axis.vertical,
+                itemCount: list.length,
+                itemBuilder: (context, index) {
+                  return  SingleProduct(
+                    images: list[index],
+                  );
+                }),
           )
         ],
       ),
