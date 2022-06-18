@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^2.0.15
   badges: ^2.0.3
   flutter_svg: ^1.0.3
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,7 @@ flutter:
   assets:
       - assets/logo/
       - assets/Images/Category/
+      - assets/Images/carousel/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
