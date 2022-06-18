@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/home/widgets/address_box.dart';
 import 'package:shopping_app/features/home/widgets/carosel_banner.dart';
 import 'package:shopping_app/features/home/widgets/category.dart';
 import 'package:shopping_app/features/home/widgets/deal_of_the_day.dart';
-import 'package:shopping_app/provider/user_provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "/home";
@@ -18,7 +16,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    final user = Provider.of<UserProvider>(context).user;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60),
@@ -113,14 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             CaroselImage(),
-            DealOfTheDay()
-            // Container(
-            //   height: 20,
-            //   color: Colors.green,
-            // )
-            // Center(
-            //   child: Text(user.toJson()),
-            // ),
+            DealOfTheDay(),
           ],
         ),
       ),
