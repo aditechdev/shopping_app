@@ -14,6 +14,7 @@ class Category extends StatelessWidget {
           itemCount: GlobalVariable.categoryList.length,
           itemExtent: 90,
           itemBuilder: (context, index) {
+           Map category = GlobalVariable.categoryList[index];
             return Column(
               children: [
                 Container(
@@ -21,7 +22,7 @@ class Category extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
                     child: SvgPicture.asset(
-                      GlobalVariable.categoryList[index]['image']!,
+                      category['image']!,
                       fit: BoxFit.cover,
                       height: 40,
                       width: 40,
@@ -29,7 +30,7 @@ class Category extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  GlobalVariable.categoryList[index]['title']!,
+                  category['title']!,
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
