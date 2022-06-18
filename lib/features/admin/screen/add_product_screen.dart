@@ -14,40 +14,23 @@ class _AddProductScreenState extends State<AddProductScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(60),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(50),
           child: AppBar(
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                gradient: GlobalVariable.appBarGradient,
-              ),
-            ),
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  child: SvgPicture.asset(
-                    "assets/logo/appbar_logo.svg",
-                    width: 120,
-                    height: 45,
-                    color: Colors.black,
-                  ),
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                  gradient: GlobalVariable.appBarGradient,
                 ),
-                const Text(
-                  "ADMIN",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                )
-              ],
-            ),
-          ),
+              ),
+              title: const Text(
+                "Add Product",
+                style: TextStyle(
+                  color: Colors.black,
+                ),
+              )),
         ),
-      
         body: Container(
-      child: Text("Add Product"),
-    ));
+          child: const Text("Add Product"),
+        ));
   }
 }
