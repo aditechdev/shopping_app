@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
@@ -10,6 +11,27 @@ class AdminScreen extends StatefulWidget {
 }
 
 class _AdminScreenState extends State<AdminScreen> {
+  int _pageIndex = 0;
+  double bottomBarWidth = 42;
+  double bottomBarBorderwidth = 5;
+  List<Widget> pages = [
+    const Center(
+      child: Text("Post Page"),
+    ),
+    const Center(
+      child: Text("Analytics Page"),
+    ),
+    const Center(
+      child: Text("Cart Page"),
+    )
+  ];
+
+  updatePage(int page) {
+    setState(() {
+      _pageIndex = page;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +66,73 @@ class _AdminScreenState extends State<AdminScreen> {
           ),
         ),
       ),
-      body: Container(),
+      body: pages[_pageIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _pageIndex,
+        selectedItemColor: GlobalVariable.selectedNavBarColor,
+        unselectedItemColor: GlobalVariable.unSelectedNavBarColor,
+        backgroundColor: GlobalVariable.backgroundColor,
+        iconSize: 28,
+        onTap: updatePage,
+        items: [
+          //! Post
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: (_pageIndex == 0)
+                        ? GlobalVariable.selectedNavBarColor
+                        : GlobalVariable.backgroundColor,
+                    width: bottomBarBorderwidth,
+                  ),
+                ),
+              ),
+              child: const Icon(Icons.home_outlined),
+            ),
+            label: " ",
+          ),
+          //! Analytics
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: (_pageIndex == 1)
+                        ? GlobalVariable.selectedNavBarColor
+                        : GlobalVariable.backgroundColor,
+                    width: bottomBarBorderwidth,
+                  ),
+                ),
+              ),
+              child: const Icon(Icons.analytics_outlined),
+            ),
+            label: " ",
+          ),
+          //! All Inbox
+          BottomNavigationBarItem(
+            icon: Container(
+              width: bottomBarWidth,
+              decoration: BoxDecoration(
+                border: Border(
+                  top: BorderSide(
+                    color: (_pageIndex == 2)
+                        ? GlobalVariable.selectedNavBarColor
+                        : GlobalVariable.backgroundColor,
+                    width: bottomBarBorderwidth,
+                  ),
+                ),
+              ),
+              child: const Icon(
+                Icons.all_inbox_outlined,
+              ),
+            ),
+            label: " ",
+          ),
+        ],
+      ),
     );
   }
 }
