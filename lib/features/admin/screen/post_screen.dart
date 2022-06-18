@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/features/admin/screen/add_product_screen.dart';
 
 class PostsScreen extends StatefulWidget {
   const PostsScreen({Key? key}) : super(key: key);
@@ -15,7 +16,9 @@ class _PostsScreenState extends State<PostsScreen> {
         child: Text("Products"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, AddProductScreen.routeName);
+        },
         child: const Icon(
           Icons.add,
         ),
