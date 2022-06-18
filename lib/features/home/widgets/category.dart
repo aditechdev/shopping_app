@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 
 class Category extends StatelessWidget {
@@ -21,7 +20,7 @@ class Category extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: SvgPicture.asset(
+                    child: Image.asset(
                       category['image']!,
                       fit: BoxFit.cover,
                       height: 40,

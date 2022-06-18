@@ -18,23 +18,23 @@ class GlobalVariable {
   static const List<Map<String, String>> categoryList = [
     {
       'title': 'Mobiles',
-      'image': 'assets/Images/Category/mobile.svg',
+      'image': 'assets/Images/Category/mobile.png',
     },
     {
       'title': 'Essentials',
-      'image': 'assets/Images/Category/essenstial.svg',
+      'image': 'assets/Images/Category/essenstial.png',
     },
     {
       'title': 'Appliances',
-      'image': 'assets/Images/Category/electronics.svg',
+      'image': 'assets/Images/Category/electronics.png',
     },
     {
       'title': 'Books',
-      'image': 'assets/Images/Category/books.svg',
+      'image': 'assets/Images/Category/books.png',
     },
     {
       'title': 'Fashion',
-      'image': 'assets/Images/Category/clothes.svg',
+      'image': 'assets/Images/Category/clothes.png',
     },
   ];
   static const List<String> carouselImages = [

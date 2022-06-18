@@ -3,7 +3,7 @@ import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/account/widget/single_product.dart';
 
 class Orders extends StatefulWidget {
-  Orders({Key? key}) : super(key: key);
+  const Orders({Key? key}) : super(key: key);
 
   @override
   State<Orders> createState() => _OrdersState();
