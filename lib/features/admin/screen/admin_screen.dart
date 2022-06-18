@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
+import 'package:shopping_app/features/admin/screen/post_screen.dart';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({Key? key}) : super(key: key);
@@ -14,9 +15,7 @@ class _AdminScreenState extends State<AdminScreen> {
   double bottomBarWidth = 42;
   double bottomBarBorderwidth = 5;
   List<Widget> pages = [
-    const Center(
-      child: Text("Post Page"),
-    ),
+    const PostsScreen(),
     const Center(
       child: Text("Analytics Page"),
     ),
