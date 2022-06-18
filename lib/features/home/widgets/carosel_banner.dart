@@ -14,6 +14,7 @@ class CaroselImage extends StatelessWidget {
                   e,
                   fit: BoxFit.cover,
                   height: 200,
+                  width: double.infinity,
                 ));
       }).toList(),
       options: CarouselOptions(
