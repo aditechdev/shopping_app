@@ -32,6 +32,22 @@ For Ethernet connections, enter the command => ipconfig getifaddr en1. For Wi-Fi
 To get your public IP address from the Mac Terminal, enter the command=> curl ifconfig.me.
 
 ```
+### Tools Used
+---
+VS Code | Figma
+
+### Resources Used
+---
+For Icon
+
+ [FavIcon](https://www.flaticon.com) |
+[Icon8](https://icons8.com) |
+[IconFinder](https://www.iconfinder.com) 
+
+For Images
+
+[Unsplash](https://unsplash.com) |
+[FreePik](https://www.freepik.com)
 ### Important documents
 ----
 [Update Node](https://www.freecodecamp.org/news/how-to-update-node-and-npm-to-the-latest-version/)
