@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/admin/screen/post_screen.dart';
 
@@ -46,11 +45,13 @@ class _AdminScreenState extends State<AdminScreen> {
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                child: SvgPicture.asset(
-                  "assets/logo/appbar_logo.svg",
-                  width: 120,
-                  height: 45,
-                  color: Colors.black,
+                child: Image.asset(
+                  "assets/logo/appbar_logo.png",
+
+                  // width: 120,
+                  height: 40,
+                  // color: Colors.black,
+                  // fit: BoxFit.fitHeight,
                 ),
               ),
               const Text(
