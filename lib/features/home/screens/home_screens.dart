@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/home/widgets/address_box.dart';
+import 'package:shopping_app/features/home/widgets/category.dart';
 import 'package:shopping_app/provider/user_provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -99,8 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Column(
-        children: const [
-          AddressBox(),
+        children: const[
+           AddressBox(),
+          SizedBox(
+            height: 10,
+          ),
+           Category(),
+          // Container(
+          //   height: 20,
+          //   color: Colors.green,
+          // )
           // Center(
           //   child: Text(user.toJson()),
           // ),

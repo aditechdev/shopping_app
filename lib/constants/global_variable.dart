@@ -14,4 +14,22 @@ class GlobalVariable {
   static const Color greyBackgroundColor = Color(0xffebecee);
   static const Color selectedNavBarColor = Color.fromARGB(255, 0, 131, 143);
   static const unSelectedNavBarColor = Colors.black87;
+
+  static const List<Map<String, String>> categoryList = [
+    {'title': 'Mobiles',
+    'image': 'assets/Images/Category/mobile.svg',
+    },
+    {'title': 'Essentials',
+    'image': 'assets/Images/Category/essenstial.svg',
+    },
+    {'title': 'Appliances',
+    'image': 'assets/Images/Category/electronics.svg',
+    },
+    {'title': 'Books',
+    'image': 'assets/Images/Category/books.svg',
+    },
+    {'title': 'Fashion',
+    'image': 'assets/Images/Category/clothes.svg',
+    },
+  ];
 }
