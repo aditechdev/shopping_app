@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/account/widget/below_app_bar.dart';
 import 'package:shopping_app/features/account/widget/orders.dart';
@@ -23,12 +24,11 @@ class AccountScreen extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.topLeft,
-                //TODO: Brand Logo
-                //TODO: WIdth :120, height , 45. COlors.black,
-                //TODo: CHange Icon to Image.asset
-                child: const Icon(
-                  Icons.abc,
-                  size: 120,
+                child: SvgPicture.asset(
+                  "assets/logo/appbar_logo.svg",
+                  width: 120,
+                  height: 45,
+                  color: Colors.black,
                 ),
               ),
               Container(
