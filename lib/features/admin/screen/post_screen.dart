@@ -9,6 +9,9 @@ class PostsScreen extends StatefulWidget {
 }
 
 class _PostsScreenState extends State<PostsScreen> {
+  navigateToAddProduct() {
+     Navigator.pushNamed(context, AddProductScreen.routeName);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,9 +19,7 @@ class _PostsScreenState extends State<PostsScreen> {
         child: Text("Products"),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, AddProductScreen.routeName);
-        },
+        onPressed: () => navigateToAddProduct(),
         child: const Icon(
           Icons.add,
         ),
