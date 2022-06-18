@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 
 class AddProductScreen extends StatefulWidget {
@@ -29,8 +28,6 @@ class _AddProductScreenState extends State<AddProductScreen> {
                 ),
               )),
         ),
-        body: Container(
-          child: const Text("Add Product"),
-        ));
+        body: const Text("Add Product"));
   }
 }
