@@ -4,9 +4,10 @@ A new Flutter project.
 
 
 ### Version used for this project
-<img src="https://img.shields.io/static/v1?label=Flutter&message=2.10.4&color=#0553B1?style=flat-square&logo=appveyor">  
-<img src="https://img.shields.io/static/v1?label=Dart&message=2.16.2&color=#0553B1"> 
+<img src="https://img.shields.io/static/v1?label=Flutter&message=2.10.4&color=#0553B1?style=flat-square&logo=appveyor">  <img src="https://img.shields.io/static/v1?label=Dart&message=2.16.2&color=#0553B1"> 
 <img src="https://img.shields.io/static/v1?label=Channel&message=Stable&color=#0553B1"> 
+
+
 <img src="https://img.shields.io/static/v1?label=Node&message=v16.15.1&color=#0553B1"> 
 
 
