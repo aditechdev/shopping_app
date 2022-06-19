@@ -44,7 +44,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-server/key/const.js
-server/.env
-server/node_modules
 lib/constants/env.dart
