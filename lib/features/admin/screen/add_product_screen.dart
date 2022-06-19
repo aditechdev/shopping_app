@@ -1,8 +1,12 @@
+import 'dart:io';
+
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/common/widget/custom_button.dart';
 import 'package:shopping_app/common/widget/custom_form_text_field.dart';
 import 'package:shopping_app/constants/global_variable.dart';
+import 'package:shopping_app/constants/utils.dart';
 
 class AddProductScreen extends StatefulWidget {
   static const String routeName = "/add-product";
@@ -26,6 +30,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Books',
     'Fashion'
   ];
+  List<File> images = [];
 
   @override
   void dispose() {
@@ -34,6 +39,13 @@ class _AddProductScreenState extends State<AddProductScreen> {
     priceController.dispose();
     quantityController.dispose();
     super.dispose();
+  }
+
+  void pickFilessdsssd() async {
+    var res = await pickImages();
+    setState(() {
+      images = res;
+    });
   }
 
   @override
@@ -64,36 +76,55 @@ class _AddProductScreenState extends State<AddProductScreen> {
                   height: 20,
                 ),
                 //! Select Product Image
-                DottedBorder(
-                  borderType: BorderType.RRect,
-                  radius: const Radius.circular(10),
-                  dashPattern: const [10, 4],
-                  strokeCap: StrokeCap.round,
-                  child: Container(
-                    width: double.infinity,
-                    height: 150,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.folder_open,
-                          size: 40,
+                images.isNotEmpty
+                    ? CarouselSlider(
+                        items: images.map((e) {
+                          return Builder(
+                              builder: (BuildContext context) => Image.file(
+                                    e,
+                                    fit: BoxFit.cover,
+                                    height: 200,
+                                    width: double.infinity,
+                                  ));
+                        }).toList(),
+                        options: CarouselOptions(
+                          viewportFraction: 1,
+                          height: 200,
                         ),
-                        const SizedBox(
-                          height: 15,
+                      )
+                    : GestureDetector(
+                        onTap: pickFilessdsssd,
+                        child: DottedBorder(
+                          borderType: BorderType.RRect,
+                          radius: const Radius.circular(10),
+                          dashPattern: const [10, 4],
+                          strokeCap: StrokeCap.round,
+                          child: Container(
+                            width: double.infinity,
+                            height: 150,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.folder_open,
+                                  size: 40,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                Text(
+                                  "Select Product Images",
+                                  style: TextStyle(
+                                      fontSize: 14, color: Colors.grey[400]),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
-                        Text(
-                          "Select Product Images",
-                          style:
-                              TextStyle(fontSize: 14, color: Colors.grey[400]),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                      ),
 
                 const SizedBox(
                   height: 30,
@@ -160,7 +191,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
           ),
         ),
       ),
-      //! Submit button 
+      //! Submit button
       bottomNavigationBar:
           CustomButton(buttonText: "Submit".toUpperCase(), onTap: () {}),
     );
