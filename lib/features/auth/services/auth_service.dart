@@ -114,7 +114,7 @@ class AuthService {
       if (res == true) {
         // get User Data
         http.Response userRes = await http.get(
-          Uri.parse("$myIPAddress/"),
+          Uri.parse("$myIPAddress/getUserData"),
           headers: <String, String>{
             'Content-Type': 'application/json; charset=UTF-8',
             'x-auth-token': token
