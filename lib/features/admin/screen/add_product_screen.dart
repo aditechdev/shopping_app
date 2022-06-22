@@ -7,6 +7,7 @@ import 'package:shopping_app/common/widget/custom_button.dart';
 import 'package:shopping_app/common/widget/custom_form_text_field.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/constants/utils.dart';
+import 'package:shopping_app/features/admin/services/admin_services.dart';
 
 class AddProductScreen extends StatefulWidget {
   static const String routeName = "/add-product";
@@ -21,6 +22,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
   final TextEditingController descriptionController = TextEditingController();
   final TextEditingController priceController = TextEditingController();
   final TextEditingController quantityController = TextEditingController();
+  final AdminServices adminServices = AdminServices();
   Color enableBorderColor = Colors.black38;
   String category = "Mobiles";
   List<String> productCategory = [
@@ -31,6 +33,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
     'Fashion'
   ];
   List<File> images = [];
+  final _addProductFormKey = GlobalKey<FormState>();
 
   @override
   void dispose() {
@@ -46,6 +49,20 @@ class _AddProductScreenState extends State<AddProductScreen> {
     setState(() {
       images = res;
     });
+  }
+
+  void sellProduct() {
+    if (_addProductFormKey.currentState!.validate() && images.isNotEmpty ) {
+      adminServices.sellProduct(
+        context: context,
+        name: productNameController.text,
+        description: descriptionController.text,
+        price: double.parse(priceController.text),
+        quantity: double.parse(quantityController.text),
+        category: category,
+        images: images,
+      );
+    }
   }
 
   @override
@@ -68,6 +85,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       ),
       body: SingleChildScrollView(
         child: Form(
+          key: _addProductFormKey,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Column(
@@ -193,7 +211,7 @@ class _AddProductScreenState extends State<AddProductScreen> {
       ),
       //! Submit button
       bottomNavigationBar:
-          CustomButton(buttonText: "Submit".toUpperCase(), onTap: () {}),
+          CustomButton(buttonText: "Submit".toUpperCase(), onTap: sellProduct),
     );
   }
 }
