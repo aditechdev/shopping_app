@@ -20,10 +20,10 @@ class _PostsScreenState extends State<PostsScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => navigateToAddProduct(),
+        tooltip: "Add a product",
         child: const Icon(
           Icons.add,
         ),
-        tooltip: "Add a product",
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

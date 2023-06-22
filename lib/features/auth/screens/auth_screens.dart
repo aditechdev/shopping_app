@@ -91,6 +91,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       padding: const EdgeInsets.all(8),
                       color: GlobalVariable.backgroundColor,
                       child: Form(
+                        key: _signUpGlobalKey,
                         child: Column(
                           children: [
                             CustomFormTextField(
@@ -124,7 +125,6 @@ class _AuthScreenState extends State<AuthScreen> {
                                 })
                           ],
                         ),
-                        key: _signUpGlobalKey,
                       ),
                     )
                   : Container(),
@@ -154,6 +154,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       padding: const EdgeInsets.all(8),
                       color: GlobalVariable.backgroundColor,
                       child: Form(
+                        key: _signInGlobalKey,
                         child: Column(
                           children: [
                             const SizedBox(
@@ -174,18 +175,17 @@ class _AuthScreenState extends State<AuthScreen> {
                               height: 10,
                             ),
                             CustomButton(
-                             
+
                                 buttonText: "Sign-In",
                                 onTap: () {
                                    if (_signInGlobalKey.currentState!.validate()) {
                                     signInUser();
 
                                    }
-                                  
+
                                 })
                           ],
                         ),
-                        key: _signInGlobalKey,
                       ),
                     )
                   : Container(),

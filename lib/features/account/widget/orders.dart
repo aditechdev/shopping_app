@@ -25,9 +25,9 @@ class _OrdersState extends State<Orders> {
       ),
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Text(
                 "Your Orders",
                 style: TextStyle(

@@ -1,4 +1,4 @@
-import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badge;
 import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/global_variable.dart';
 import 'package:shopping_app/features/account/screen/account_screen.dart';
@@ -35,7 +35,6 @@ class _BottomBarState extends State<BottomBar> {
     return Scaffold(
       body: pages[_pageIndex],
       bottomNavigationBar: BottomNavigationBar(
-        
         currentIndex: _pageIndex,
         selectedItemColor: GlobalVariable.selectedNavBarColor,
         unselectedItemColor: GlobalVariable.unSelectedNavBarColor,
@@ -90,11 +89,12 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                 ),
               ),
-              child: Badge(
-                elevation: 0,
-                badgeContent: const Text("2"),
-                badgeColor: Colors.white,
-                child: const Icon(
+              child: const badge.Badge(
+
+                // elevation: 0,
+                badgeContent: Text("2"),
+                // badgeColor: Colors.white,
+                child: Icon(
                   Icons.shopping_cart_outlined,
                 ),
               ),

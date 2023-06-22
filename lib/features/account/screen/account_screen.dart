@@ -35,8 +35,8 @@ class AccountScreen extends StatelessWidget {
                   left: 15,
                   right: 15,
                 ),
-                child: Row(
-                  children: const [
+                child: const Row(
+                  children: [
                     Padding(
                       padding: EdgeInsets.only(right: 15),
                       child: Icon(Icons.notifications_outlined),
@@ -52,8 +52,8 @@ class AccountScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: const [
+      body: const Column(
+        children: [
           AppBarBelow(),
           SizedBox(
             height: 10,
